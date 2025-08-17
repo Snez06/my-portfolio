@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sinetemba Xhosa — Portfolio</title>
+  <style>
+    :root{
+      --primary:#0d6efd;
+      --accent:#6610f2;
+      --text:#333;
+      --bg:#f4f6f8;
+      --card:#fff;
+      --shadow:0 4px 12px rgba(0,0,0,.1);
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}
+    .container{width:92%;max-width:1100px;margin:auto}
+
+    /* ===== NAVBAR ===== */
+    .nav-wrap{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.7);backdrop-filter:saturate(180%) blur(10px);box-shadow:0 1px 8px rgba(0,0,0,.06)}
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--primary);display:inline-block}
+    .links{display:flex;gap:1rem}
+    .links a{color:var(--text);text-decoration:none;font-weight:600;padding:.5rem .75rem;border-radius:8px}
+    .links a:hover{background:rgba(13,110,253,.08);color:var(--primary)}
+
+    /* Mobile menu (CSS-only) */
+    #nav-toggle{display:none}
+    .hamburger{display:none;cursor:pointer;padding:.5rem;border-radius:8px}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);margin:6px 0;transition:.3s}
+    @media (max-width: 860px){
+      .links{position:absolute;left:0;right:0;top:64px;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid #eee;display:none}
+      .links a{padding:1rem 1.25rem;border-radius:0}
+      #nav-toggle:checked ~ .links{display:flex}
+      .hamburger{display:block}
+    }
+
+    /* ===== HEADER / HERO ===== */
+    header{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:48px 0 28px}
+    .hero{display:flex;align-items:center;gap:1.5rem;flex-direction:column;text-align:center}
+    .profile-pic{width:140px;height:140px;border-radius:50%;border:4px solid #fff;object-fit:cover;box-shadow:var(--shadow)}
+    .hero h1{margin:.25rem 0 .35rem;font-size:2rem}
+    .subtitle{opacity:.95}
+
+    /* ===== SECTIONS ===== */
+    section{padding:48px 0;scroll-margin-top:84px}
+    h2{color:var(--primary);border-bottom:3px solid var(--primary);display:inline-block;padding-bottom:6px;margin:0 0 16px}
+    p{line-height:1.7}
+
+    /* Cards & lists */
+    .list{list-style:none;padding:0;margin:0}
+    .list li{background:var(--card);margin:.6rem 0;padding:12px;border-left:5px solid var(--primary);box-shadow:0 2px 6px rgba(0,0,0,.08);border-radius:8px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.15)}
+    .card h3{margin:.25rem 0;color:var(--primary)}
+    .muted{opacity:.8}
+
+    /* Contact */
+    .contact a{color:var(--primary);text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+
+    /* Footer */
+    footer{background:#222;color:#fff;text-align:center;padding:18px 0}
+
+    /* Animations */
+    .fade-in{opacity:0;transform:translateY(18px);animation:fadeInUp .9s ease forwards}
+    #skills{animation-delay:.15s}#education{animation-delay:.3s}#academics{animation-delay:.45s}#experience{animation-delay:.6s}#contact{animation-delay:.75s}
+    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="brand" title="Sinetemba Xhosa">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Sinetemba Xhosa</span>
+        </div>
+        <label class="hamburger" for="nav-toggle" aria-label="Menu" aria-controls="primary-navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </label>
+        <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+        <div class="links" id="primary-navigation">
+          <a href="#bio">Bio</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#academics">Academic Record</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Header / Hero -->
+  <header>
+    <div class="container hero">
+      <img src="selfie.jpg" alt="Portrait of Sinetemba Xhosa" class="profile-pic" />
+      <h1>Sinetemba Xhosa</h1>
+      <p class="subtitle">Junior Developer | Full‑Stack Web Development  | BSc in IT (In Progress)</p>
+    </div>
+  </header>
+
+  <!-- Bio -->
+  <section id="bio" class="fade-in">
+    <div class="container">
+      <h2>Professional Summary</h2>
+      <p>
+        Motivated and resourceful Junior Developer with a strong foundation in Information and Communication Technology,
+        Systems Development, and Full‑Stack Web Development. With a background in mechanical assembly and formal
+        training in programming, cloud computing, and software development, I bring hands‑on problem‑solving ability and
+        technical expertise. Currently pursuing a BSc in Information Technology, with a Full‑Stack Developer Certificate (2025)
+        and a Diploma in Systems Development (2023). Passionate about building efficient and scalable applications while
+        continuously learning and growing in the tech industry.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills & Competencies -->
+  <section id="skills" class="fade-in">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <ul class="list">
+        <li>Languages: JavaScript, HTML, CSS, Python, PHP, Java, C++</li>
+        <li>Frameworks & Tools: Git, Node.js, Visual Studio Code</li>
+        <li>Databases: MySQL, Microsoft Access</li>
+        <li>Cloud & Platforms: AWS (Foundations), Web Hosting</li>
+        <li>Other: Software Testing, Debugging, Technical Troubleshooting</li>
+      </ul>
+
+      <h2 style="margin-top:28px">Core Competencies</h2>
+      <ul class="list">
+        <li>Full‑Stack Web Development</li>
+        <li>Responsive Web Design</li>
+        <li>Software Development Lifecycle (SDLC)</li>
+        <li>Problem Solving & Debugging</li>
+        <li>Team Collaboration & Communication</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section id="education" class="fade-in">
+    <div class="container">
+      <h2>Education & Certifications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>BSc in Information Technology</h3>
+          <p class="muted">Richfield Graduate Institute of Technology</p>
+          <p>2024 — Expected 2026</p>
+        </div>
+        <div class="card">
+          <h3>Full‑Stack Developer Certificate</h3>
+          <p class="muted">IT Varsity & FNB</p>
+          <p>Obtained: 2025</p>
+        </div>
+        <div class="card">
+          <h3>National Diploma in Systems Development</h3>
+          <p class="muted">Boston City Campus</p>
+          <p>Completed: 2023</p>
+        </div>
+        <div class="card">
+          <h3>Higher Certificate in Business Management (NQF 5)</h3>
+          <p class="muted">Boston City Campus</p>
+          <p>Completed: 2020</p>
+        </div>
+        <div class="card">
+          <h3>NCV Level 4 in ICT</h3>
+          <p class="muted">Buffalo City College</p>
+          <p>Completed: 2013</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Record Highlights -->
+  <section id="academics" class="fade-in">
+    <div class="container">
+      <h2>Academic Record Highlights</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>2024 Summary</h3>
+          <p>Overall Mark: <strong>70.64%</strong></p>
+          <ul class="list">
+            <li>Web Technology 512: 78%</li>
+            <li>Programming 511: 72%</li>
+            <li>Networks 511: 68%</li>
+            <li>Information Systems 511: 79%</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2025 Summary</h3>
+          <p>Overall Mark: <strong>70%</strong></p>
+          <ul class="list">
+            <li>Programming 621: 70%</li>
+            <li>Internet Programming 621: 71%</li>
+            <li>Database Systems 600: 75%</li>
+            <li>Cloud Computing 600: 64% </li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px">Big Data & IoT, Machine Learning, and Internet Programming 622 are in progress for Semester 2, 2025.</p>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="fade-in">
+    <div class="container">
+      <h2>Work Experience</h2>
+      <div class="card">
+        <h3>Assembler/Operator — Mercedes‑Benz South Africa</h3>
+        <p class="muted">East London • Jul 2017 — Sep 2024</p>
+        <ul class="list">
+          <li>Assembled vehicles and mechanical components according to manufacturing standards and blueprints.</li>
+          <li>Operated and calibrated machinery to ensure production efficiency and safety compliance.</li>
+          <li>Collaborated with engineering teams to maintain quality control and resolve technical issues.</li>
+          <li>Maintained detailed production logs and contributed to continuous improvement initiatives.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="fade-in contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:xsinetemba@gmail.com">xsinetemba@gmail.com</a></p>
+      <p>Phone: <a href="tel:+27614584336">+27 61 458 4336</a></p>
+      <p>Location: Mdantsane, East London, South Africa</p>
+      <p>GitHub: <a href="https://github.com/Snez06" target="_blank" rel="noopener">https://github.com/Snez06</a> <br>
+        LinkedIn: <a href="www.linkedin.com/in/sinetemba-xhosa-7721a3174" target="_blank" rel="noopener">www.linkedin.com/in/sinetemba-xhosa-7721a3174</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sinetemba Xhosa. All rights reserved.</p>
+  </footer>
+</body>
+</html>
